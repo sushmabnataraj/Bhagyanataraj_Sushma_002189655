@@ -5,6 +5,8 @@
  */
 package Model_part2;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /**
@@ -143,6 +145,9 @@ public class PatientPart2 {
                 vsign.setIsRecent(false);
             }
         }
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         VitalSignsPart2 vitalSignPart2 = new VitalSignsPart2();
         vitalSignPart2.setAgeGroup(ageGroup);
@@ -151,6 +156,7 @@ public class PatientPart2 {
         vitalSignPart2.setSysBloodPressure(sysBloodPressure);
         vitalSignPart2.setWeightInKgs(weightInKgs);
         vitalSignPart2.setIsRecent(true);
+        vitalSignPart2.setTimestamp(timestamp.toString());
         this.vitalSignsHistory.addVital(vitalSignPart2);
     }
     
@@ -170,6 +176,7 @@ public class PatientPart2 {
         for (int i = 0; i < this.vitalSignsHistory.getVitalSignsHistory().size(); i++) {
             VitalSignsPart2 vsign = this.vitalSignsHistory.getVitalSignsHistory().get(i);
             System.out.println("\n\nRecord " + (i + 1) + " : ");
+            System.out.println("Timestamp: " + vsign.getTimestamp());
             System.out.println("Age: " + vsign.getAgeGroup());
             System.out.println("Respiratory Rate: " + vsign.getRespiratoryRate());
             System.out.println("Heart Rate: " + vsign.getHeartRate());
@@ -209,8 +216,8 @@ public class PatientPart2 {
                 result = p.isThisVitalSignNormal("HeartRate");
                 break;
 
-            case "BloodPressure":
-                result = p.isThisVitalSignNormal("BloodPressure");
+            case "SysBloodPressure":
+                result = p.isThisVitalSignNormal("SysBloodPressure");
                 break;
 
             case "WeightInKgs":

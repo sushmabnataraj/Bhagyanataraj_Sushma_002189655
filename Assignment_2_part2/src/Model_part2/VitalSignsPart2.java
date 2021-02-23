@@ -17,6 +17,15 @@ public class VitalSignsPart2 {
     private int sysBloodPressure;
     private double weightInKgs;
     private  boolean isRecent;
+    private String timestamp;
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+        public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
     
     public boolean getIsIsRecent() {
         return isRecent;
@@ -79,7 +88,7 @@ public class VitalSignsPart2 {
             case "HeartRate":
                 return heartRateNorm();
 
-            case "BloodPressure":
+            case "SysBloodPressure":
                 return bloodPressureNorm();
 
             case "WeightInKgs":
