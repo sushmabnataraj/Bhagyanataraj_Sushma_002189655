@@ -55,7 +55,7 @@ public class Patient extends Person {
         return false;
     }
     
-    public void printVitalSignsHistory(){
+    public void printEncounterHistory(){
         int i = 0;
         for(Encounter enc:this.encounterHistory.encounterList){
             VitalSigns vsign = enc.getVitalSigns();

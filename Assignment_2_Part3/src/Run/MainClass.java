@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class MainClass {
     
-                                       //MainFunction starts from here
+    //MainFunction starts from here
     public static void main(String[] args) {
         PatientData patientData = new PatientData();
         build(patientData);
@@ -81,25 +81,84 @@ public class MainClass {
         System.out.println("Enter patient's Name: ");
 
         String patientName = scanObj.nextLine();
+        
+        if (patientName.matches("[0-9]+") && patientName.length() > 2) {
+            System.out.println("Please enter the Patient name using alphabets ");
+            System.out.println("Please enter patient name correctly: ");
+            patientName = scanObj.next();
+        }
 
         Patient patient = patientData.getPatient(patientName);
                 
         System.out.println("\nMake sure you enter 0 for new born and 1 for Infants.");
         System.out.println("\nMention the Age: ");
-
-        int ageGroup = scanObj.nextInt();
+        int ageGroup;
+        try{
+            
+            ageGroup = scanObj.nextInt();
+        }
+        catch(Exception exc){
+             System.out.println("Mention the age in numerical values");
+             scanObj.next();
+             System.out.println("Enter correct age here:");
+            ageGroup = scanObj.nextInt();
+        }
 
         System.out.println("Enter Respiratory Rate: ");
-        int respiratoryRate = scanObj.nextInt();
+//        int respiratoryRate = scanObj.nextInt();
+        int respiratoryRate;
+        try{
+            
+            respiratoryRate = scanObj.nextInt();
+        }
+        catch(Exception exc){
+             System.out.println("Mention the Respiratory Rate in numerical values");
+             scanObj.next();
+             System.out.println("Enter correct Respiratory Rate here:");
+             respiratoryRate = scanObj.nextInt();
+        }
 
         System.out.println("Enter Heart Rate: ");
-        int heartRate = scanObj.nextInt();
+//      int heartRate = scanObj.nextInt();
+        int heartRate;
+        try{
+            
+            heartRate = scanObj.nextInt();
+        }
+        catch(Exception exc){
+             System.out.println("Mention the Heart Rate in numerical values");
+             scanObj.next();
+             System.out.println("Enter correct Heart Rate here:");
+             heartRate = scanObj.nextInt();
+        }
 
         System.out.println("Enter Blood Pressure: ");
-        int sysBloodPressure = scanObj.nextInt();
+//        int sysBloodPressure = scanObj.nextInt();
+        int sysBloodPressure;
+        try{
+            
+            sysBloodPressure = scanObj.nextInt();
+        }
+        catch(Exception exc){
+             System.out.println("Mention the Blood Pressure in numerical values");
+             scanObj.next();
+             System.out.println("Enter correct Blood pressure here:");
+             sysBloodPressure = scanObj.nextInt();
+        }
 
         System.out.println("Enter Weight in Kgs: ");
-        double weightInKgs = scanObj.nextDouble();
+//        double weightInKgs = scanObj.nextDouble();
+        int weightInKgs;
+        try{
+            
+            weightInKgs = scanObj.nextInt();
+        }
+        catch(Exception exc){
+             System.out.println("Mention the Blood Pressure in numerical values");
+             scanObj.next();
+             System.out.println("Enter correct Blood pressure here:");
+             weightInKgs = scanObj.nextInt();
+        }
         
         VitalSigns vitalSign = new VitalSigns();
         vitalSign.setAgeGroup(ageGroup);
@@ -128,66 +187,33 @@ public class MainClass {
     
      //addNewVitalSign adds new to record to existing lists or to add new one to it
     public static void addNewVitalSign(int ageGroup, int respiratoryRate, int heartRate, int sysBloodPressure, double weightInKgs) {
-//        for (int i = 0; i < this.vitalSignsHistory.getVitalSignsHistory().size(); i++) {
-//            VitalSignsPart2 vsign = this.vitalSignsHistory.getVitalSignsHistory().get(i);
-//            if (vsign.getIsIsRecent()) {
-//                vsign.setIsRecent(false);
-//            }
-//        }
-        
-        
-        //vitalSignPart2.setTimestamp(timeStamp.toString());
-        //this.vitalSignsHistory.addVital(vitalSignPart2);
+
     }
     
     
     // displayrecords one praticular record asking full name
     private static void displayRecords(PatientData patientData) {
-        System.out.println("VitalSigns-History: ");
+        System.out.println("Encounter-History: ");
         for (Patient p : patientData.getPatientData()) {
             System.out.println("\n\nPatient Name: " + p.getName());
-            p.printVitalSignsHistory();
+            p.printEncounterHistory();
         }
     }
-    
-//    
-//    public boolean isThisVitalSignNormal(String selectedVitalSignName) {
-//        
-//        
-//        
-//        
-//        for (VitalSigns vsign : this.vitalSignsHistory.getVitalSignsHistory()) {
-//            if (vsign.getIsIsRecent()) {
-//                return vsign.isThisVitalSignNormal(selectedVitalSignName);
-//            }
-//        }
-//        return false;
-//    }
-              
-    // display and fetch all records from the Patients  data
-//    public void displayVitalSignsHistory() {
-//
-//        for (int i = 0; i < this.vitalSignsHistory.getVitalSignsHistory().size(); i++) {
-//            VitalSigns vsign = this.vitalSignsHistory.getVitalSignsHistory().get(i);
-//            System.out.println("\nRecord " + (i + 1) + " : ");
-//            System.out.println("Timestamp: " + vsign.getTimestamp());
-//            System.out.println("Age: " + vsign.getAgeGroup());
-//            System.out.println("Respiratory Rate: " + vsign.getRespiratoryRate());
-//            System.out.println("Heart Rate: " + vsign.getHeartRate());
-//            System.out.println("Systolic Blood pressure: " + vsign.getSysBloodPressure());
-//            System.out.println("Weight In Kgs: " + vsign.getWeightInKgs());
-//        }
-//    }
-    
-    
-    // Check whether patient is normal or abnormal
+   
+// Check whether patient is normal or abnormal
     
     private static void isThisVitalSignNormal(PatientData patientData) {
         Scanner scanObj = new Scanner(System.in);
         System.out.println("Please Enter Patient's Name: ");
 
         String name = scanObj.nextLine();
-
+        
+        
+        if (name.matches("[0-9]+") && name.length() > 2) {
+            System.out.println("Patinet name contains only digits! please enter the name");
+            System.out.println("Please enter patient name");
+            name = scanObj.next();
+        }
         System.out.println("Please enter the attribute which you want to see: ");
         System.out.println("\nRespiratoryRate");
         System.out.println("HeartRate");
