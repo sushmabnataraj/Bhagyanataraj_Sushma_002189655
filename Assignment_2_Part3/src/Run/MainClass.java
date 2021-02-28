@@ -154,9 +154,9 @@ public class MainClass {
             weightInKgs = scanObj.nextInt();
         }
         catch(Exception exc){
-             System.out.println("Mention the Blood Pressure in numerical values");
+             System.out.println("Mention the Weight in numerical values");
              scanObj.next();
-             System.out.println("Enter correct Blood pressure here:");
+             System.out.println("Enter correct Weight here:");
              weightInKgs = scanObj.nextInt();
         }
         
