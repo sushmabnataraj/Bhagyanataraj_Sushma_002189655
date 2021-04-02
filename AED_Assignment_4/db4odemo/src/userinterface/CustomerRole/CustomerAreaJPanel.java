@@ -26,13 +26,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private EcoSystem ecosystem;
-    private UserAccount account;
+    private UserAccount uAcc;
     
     public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account,EcoSystem ecosystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
-        this.account = account;
+        this.uAcc = account;
         //valueLabel.setText(enterprise.getName());
         populateRequestTable();
         populatePreviousOrderTable();
@@ -60,17 +60,21 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPreviousOrders = new javax.swing.JTable();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(102, 102, 102));
         enterpriseLabel.setText("Welcome");
         jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 11, 127, 30));
 
         lblCustomerID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblCustomerID.setForeground(new java.awt.Color(102, 102, 102));
         lblCustomerID.setText("<value>");
         jPanel1.add(lblCustomerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 13, 80, 26));
 
-        refreshTestJButton.setBackground(new java.awt.Color(0, 0, 0));
+        refreshTestJButton.setBackground(new java.awt.Color(31, 189, 214));
+        refreshTestJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         refreshTestJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +85,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 48, 89, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Restaurant");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
@@ -111,7 +116,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 131, 440, 97));
 
-        btnOrder.setBackground(new java.awt.Color(0, 0, 0));
+        btnOrder.setBackground(new java.awt.Color(31, 189, 214));
+        btnOrder.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnOrder.setText("Place Order");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +128,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 250, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Previous Orders");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 327, -1, -1));
 
@@ -170,7 +177,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         else{
             Restaurant restaurant = (Restaurant)tblRestaurant.getValueAt(selectedRow, 0);
-            MenuJPanel manageMenuPanel=new MenuJPanel(userProcessContainer,account,ecosystem,restaurant);
+            MenuJPanel manageMenuPanel=new MenuJPanel(userProcessContainer,uAcc,ecosystem,restaurant);
             userProcessContainer.add("MenuPanel",manageMenuPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -210,7 +217,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         tablemodel.setRowCount(0);
          
         for (Customer cust:ecosystem.getCustomerDirectory().getCustomerDirectory()) {
-           if (cust.getUserName().equals(account.getUsername())) {
+           if (cust.getUserName().equals(uAcc.getUsername())) {
             for(Order menu:cust.getOrderList()){
                 Object[] row = new Object[4];
                 row[0] = menu;

@@ -66,52 +66,58 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         mcAddressTextField = new javax.swing.JTextField();
         mcNumberTextField = new javax.swing.JTextField();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         mngCustomerslbl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mngCustomerslbl.setForeground(new java.awt.Color(102, 102, 102));
         mngCustomerslbl.setText("Manage Customers List");
-        jPanel1.add(mngCustomerslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 19, -1, -1));
+        jPanel1.add(mngCustomerslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
-        mcBackBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        mcBackBtn.setBackground(new java.awt.Color(102, 102, 102));
+        mcBackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        mcBackBtn.setForeground(new java.awt.Color(255, 255, 255));
         mcBackBtn.setText("<");
         mcBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcBackBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(mcBackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, -1, -1));
+        jPanel1.add(mcBackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         mcNamelbl.setText("Name :");
-        jPanel1.add(mcNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 63, -1, -1));
+        jPanel1.add(mcNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         mcUnamelbl.setText("Username :");
-        jPanel1.add(mcUnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 101, -1, -1));
+        jPanel1.add(mcUnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
         mcPwdlbl.setText("Password :");
-        jPanel1.add(mcPwdlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 140, -1, -1));
+        jPanel1.add(mcPwdlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         mcNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcNameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(mcNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 183, -1));
+        jPanel1.add(mcNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 183, -1));
 
         mcUnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcUnameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(mcUnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 183, -1));
-        jPanel1.add(mcPwdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 183, -1));
+        jPanel1.add(mcUnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 183, -1));
+        jPanel1.add(mcPwdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 183, -1));
 
+        mcAddCustomerbtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcAddCustomerbtn.setForeground(new java.awt.Color(255, 255, 255));
         mcAddCustomerbtn.setText("Add Customer");
         mcAddCustomerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcAddCustomerbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(mcAddCustomerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+        jPanel1.add(mcAddCustomerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         mcListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,61 +141,61 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(mcListTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 590, 119));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 590, 119));
 
+        mcEditbtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcEditbtn.setForeground(new java.awt.Color(255, 255, 255));
         mcEditbtn.setText("Edit");
         mcEditbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcEditbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(mcEditbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 65, -1));
+        jPanel1.add(mcEditbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 65, -1));
 
+        mcDeletebtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcDeletebtn.setForeground(new java.awt.Color(255, 255, 255));
         mcDeletebtn.setText("Delete");
         mcDeletebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcDeletebtnActionPerformed(evt);
             }
         });
-        jPanel1.add(mcDeletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, -1, -1));
+        jPanel1.add(mcDeletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
 
+        mcSavebtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcSavebtn.setForeground(new java.awt.Color(255, 255, 255));
         mcSavebtn.setText("Save");
         mcSavebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcSavebtnActionPerformed(evt);
             }
         });
-        jPanel1.add(mcSavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 65, -1));
+        jPanel1.add(mcSavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 65, -1));
 
         mcNumberlbl.setText("PhNumber :");
-        jPanel1.add(mcNumberlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+        jPanel1.add(mcNumberlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
 
         mcAddresslbl.setText("Address :");
-        jPanel1.add(mcAddresslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jPanel1.add(mcAddresslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
         mcAddressTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mcAddressTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(mcAddressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 183, -1));
-        jPanel1.add(mcNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 183, -1));
+        jPanel1.add(mcAddressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 183, -1));
+        jPanel1.add(mcNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 183, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
