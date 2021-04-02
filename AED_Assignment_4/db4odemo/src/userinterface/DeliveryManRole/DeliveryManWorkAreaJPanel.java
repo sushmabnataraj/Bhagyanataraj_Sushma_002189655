@@ -53,23 +53,30 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         tblOrderDetails = new javax.swing.JTable();
         lblOrderDetails = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(243, 248, 249));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnODProcess.setBackground(new java.awt.Color(31, 189, 214));
+        btnODProcess.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnODProcess.setForeground(new java.awt.Color(255, 255, 255));
         btnODProcess.setText("Process");
         btnODProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnODProcessActionPerformed(evt);
             }
         });
-        add(btnODProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
+        add(btnODProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
 
+        btnODRefresh.setBackground(new java.awt.Color(31, 189, 214));
+        btnODRefresh.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnODRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnODRefresh.setText("Refresh");
         btnODRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnODRefreshActionPerformed(evt);
             }
         });
-        add(btnODRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+        add(btnODRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, -1));
 
         tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,19 +113,20 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 58, 650, 170));
 
         lblOrderDetails.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblOrderDetails.setForeground(new java.awt.Color(102, 102, 102));
         lblOrderDetails.setText("Details of Order");
-        add(lblOrderDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 20));
+        add(lblOrderDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnODProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnODProcessActionPerformed
         
-        int selectedRow = tblOrderDetails.getSelectedRow();
+        int highlightedRow = tblOrderDetails.getSelectedRow();
         
-        if (selectedRow < 0){
+        if (highlightedRow < 0){
             return;
         }
         
-        Order order = (Order)tblOrderDetails.getValueAt(selectedRow, 0); 
+        Order order = (Order)tblOrderDetails.getValueAt(highlightedRow, 0); 
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, order);
         userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -140,23 +148,22 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     public void populateODTable() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    DefaultTableModel tablemodel = (DefaultTableModel) tblOrderDetails.getModel();
+    DefaultTableModel tblModel = (DefaultTableModel) tblOrderDetails.getModel();
         
-        tablemodel.setRowCount(0);
+        tblModel.setRowCount(0);
         
         for(DeliveryMan deliveryMan : business.getDeliveryManDirectory().getDeliveryManDirectory()){
             if(deliveryMan.getUserName().equals(userAccount.getUsername())){
                     
                 for(Order order : deliveryMan.getOrderList()){
-                Object[] row = new Object[6];
-                row[2] = order.getCustomerName();
-                row[1] = order.getRestaurantName();
-               
-                row[4] = order.getOrderAmount();
-                row[5] = order.getStatus();
-                row[0] = order;
-                row[3] = order.getAddress();
-                tablemodel.addRow(row);
+                Object[] rowNo = new Object[6];                 
+                rowNo[4] = order.getOrderAmount();
+                rowNo[5] = order.getStatus();
+                rowNo[0] = order;
+                rowNo[1] = order.getRestaurantName();
+                rowNo[2] = order.getCustomerName();
+                rowNo[3] = order.getAddress();
+                tblModel.addRow(rowNo);
                     
                 }
             }

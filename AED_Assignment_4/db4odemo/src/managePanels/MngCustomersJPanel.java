@@ -47,7 +47,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        mngCustomerslbl = new javax.swing.JLabel();
+        lblmngCustomers = new javax.swing.JLabel();
         mcBackBtn = new javax.swing.JButton();
         mcNamelbl = new javax.swing.JLabel();
         mcUnamelbl = new javax.swing.JLabel();
@@ -69,10 +69,10 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mngCustomerslbl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mngCustomerslbl.setForeground(new java.awt.Color(102, 102, 102));
-        mngCustomerslbl.setText("Manage Customers List");
-        jPanel1.add(mngCustomerslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        lblmngCustomers.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblmngCustomers.setForeground(new java.awt.Color(102, 102, 102));
+        lblmngCustomers.setText("Manage Customers ");
+        jPanel1.add(lblmngCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
         mcBackBtn.setBackground(new java.awt.Color(102, 102, 102));
         mcBackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -110,6 +110,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         jPanel1.add(mcPwdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 183, -1));
 
         mcAddCustomerbtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcAddCustomerbtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         mcAddCustomerbtn.setForeground(new java.awt.Color(255, 255, 255));
         mcAddCustomerbtn.setText("Add Customer");
         mcAddCustomerbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +145,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 590, 119));
 
         mcEditbtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcEditbtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         mcEditbtn.setForeground(new java.awt.Color(255, 255, 255));
         mcEditbtn.setText("Edit");
         mcEditbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +156,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         jPanel1.add(mcEditbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 65, -1));
 
         mcDeletebtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcDeletebtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         mcDeletebtn.setForeground(new java.awt.Color(255, 255, 255));
         mcDeletebtn.setText("Delete");
         mcDeletebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +167,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
         jPanel1.add(mcDeletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
 
         mcSavebtn.setBackground(new java.awt.Color(31, 189, 214));
+        mcSavebtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         mcSavebtn.setForeground(new java.awt.Color(255, 255, 255));
         mcSavebtn.setText("Save");
         mcSavebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -284,6 +288,7 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblmngCustomers;
     private javax.swing.JButton mcAddCustomerbtn;
     private javax.swing.JTextField mcAddressTextField;
     private javax.swing.JLabel mcAddresslbl;
@@ -300,7 +305,6 @@ public class MngCustomersJPanel extends javax.swing.JPanel {
     private javax.swing.JButton mcSavebtn;
     private javax.swing.JTextField mcUnameTextField;
     private javax.swing.JLabel mcUnamelbl;
-    private javax.swing.JLabel mngCustomerslbl;
     // End of variables declaration//GEN-END:variables
 
     private void populateCustomerListTable() {

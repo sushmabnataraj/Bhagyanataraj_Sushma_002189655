@@ -60,9 +60,10 @@ public class MngMenuJPanel extends javax.swing.JPanel {
         tblMMCatalogue = new javax.swing.JTable();
         btnMMDelete = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMMBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnMMBack.setBackground(new java.awt.Color(102, 102, 102));
         btnMMBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnMMBack.setForeground(new java.awt.Color(255, 255, 255));
         btnMMBack.setText("<");
@@ -74,6 +75,7 @@ public class MngMenuJPanel extends javax.swing.JPanel {
         jPanel1.add(btnMMBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Menu Catalogue");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 15, 147, -1));
 
@@ -95,7 +97,8 @@ public class MngMenuJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(txtMMPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 139, 135, -1));
 
-        btnMMAddFoodItem.setBackground(new java.awt.Color(0, 0, 0));
+        btnMMAddFoodItem.setBackground(new java.awt.Color(31, 189, 214));
+        btnMMAddFoodItem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnMMAddFoodItem.setForeground(new java.awt.Color(255, 255, 255));
         btnMMAddFoodItem.setText("+ ADD");
         btnMMAddFoodItem.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +135,8 @@ public class MngMenuJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 250, 359, 171));
 
-        btnMMDelete.setBackground(new java.awt.Color(0, 0, 0));
+        btnMMDelete.setBackground(new java.awt.Color(31, 189, 214));
+        btnMMDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnMMDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnMMDelete.setText("DELETE");
         btnMMDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -146,14 +150,11 @@ public class MngMenuJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())

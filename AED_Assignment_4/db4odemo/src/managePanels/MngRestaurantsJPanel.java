@@ -34,7 +34,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
-        populateTblMRList();
+        displayTableMRList();
     }
 
 //    public MngRestaurantsJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
@@ -70,9 +70,12 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         lblMRPhNumber = new javax.swing.JLabel();
         txtfMRPhNumber = new javax.swing.JTextField();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBackMR.setBackground(new java.awt.Color(102, 102, 102));
         btnBackMR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBackMR.setForeground(new java.awt.Color(255, 255, 255));
         btnBackMR.setText("<");
         btnBackMR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +85,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         jPanel1.add(btnBackMR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 51, 39));
 
         lblMainMR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMainMR.setForeground(new java.awt.Color(102, 102, 102));
         lblMainMR.setText("Manage Restaurants");
         jPanel1.add(lblMainMR, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 11, 150, 39));
 
@@ -106,6 +110,9 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         jPanel1.add(txtfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 180, 30));
         jPanel1.add(txtfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 180, 30));
 
+        btnRestaurantRegister.setBackground(new java.awt.Color(31, 189, 214));
+        btnRestaurantRegister.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRestaurantRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRestaurantRegister.setText("Register");
         btnRestaurantRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +137,9 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 536, 127));
 
+        btnMREdit.setBackground(new java.awt.Color(31, 189, 214));
+        btnMREdit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnMREdit.setForeground(new java.awt.Color(255, 255, 255));
         btnMREdit.setText("Edit");
         btnMREdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +148,9 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnMREdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 65, -1));
 
+        btnMRDelete.setBackground(new java.awt.Color(31, 189, 214));
+        btnMRDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnMRDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnMRDelete.setText("Delete");
         btnMRDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +159,9 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnMRDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
 
+        btnMRSave.setBackground(new java.awt.Color(31, 189, 214));
+        btnMRSave.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnMRSave.setForeground(new java.awt.Color(255, 255, 255));
         btnMRSave.setText("Save");
         btnMRSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +230,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
             String username = (String) tblMRList.getValueAt(highlightedRow, 1);
             ecosystem.getRestaurantDirectory().deleteRestaurant(username);
             ecosystem.getUserAccountDirectory().deleteUserAccount(userAcc);
-            populateTblMRList();
+            displayTableMRList();
         }
         else{
             JOptionPane.showMessageDialog(this, "Please select the row to delete");
@@ -233,7 +249,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         if(ecosystem.getUserAccountDirectory().checkIfUsernameIsUnique(txtfName.getText())){
             UserAccount userAccount = ecosystem.getUserAccountDirectory().createUserAccount(txtfName.getText(), txtfUsername.getText(), txtfPassword.getText(), null, new AdminRole());
             Restaurant restaurant = ecosystem.getRestaurantDirectory().createUserAccount(txtfName.getText(), txtfUsername.getText(), txtfPassword.getText(),txtfMRAddress.getText(),txtfMRPhNumber.getText());
-            populateTblMRList();
+            displayTableMRList();
             txtfName.setText("");
             txtfUsername.setText("");
             txtfPassword.setText("");
@@ -254,7 +270,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
         txtfName.setText("");
         txtfUsername.setText("");
         txtfPassword.setText("");
-        populateTblMRList();
+        displayTableMRList();
         
     }//GEN-LAST:event_btnMRSaveActionPerformed
 
@@ -285,7 +301,7 @@ public class MngRestaurantsJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtfUsername;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTblMRList() {
+    private void displayTableMRList() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         ArrayList<Restaurant> restDirectory = ecosystem.getRestaurantDirectory().getRestaurantDirectory();
         DefaultTableModel tableModel = (DefaultTableModel)tblMRList.getModel();

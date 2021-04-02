@@ -53,9 +53,11 @@ public class DeliveryAssignmentJPanel extends javax.swing.JPanel {
         tblDADeliveryMan = new javax.swing.JTable();
         btnDABack = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnDAOrderAssignment.setBackground(new java.awt.Color(0, 0, 0));
+        btnDAOrderAssignment.setBackground(new java.awt.Color(31, 189, 214));
+        btnDAOrderAssignment.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDAOrderAssignment.setForeground(new java.awt.Color(255, 255, 255));
         btnDAOrderAssignment.setText("ASSIGN ORDER");
         btnDAOrderAssignment.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +65,7 @@ public class DeliveryAssignmentJPanel extends javax.swing.JPanel {
                 btnDAOrderAssignmentActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDAOrderAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 218, 110, -1));
+        jPanel1.add(btnDAOrderAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 218, 210, -1));
 
         tblDADeliveryMan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,7 +87,7 @@ public class DeliveryAssignmentJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 76, 577, 100));
 
-        btnDABack.setBackground(new java.awt.Color(0, 0, 0));
+        btnDABack.setBackground(new java.awt.Color(102, 102, 102));
         btnDABack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDABack.setForeground(new java.awt.Color(255, 255, 255));
         btnDABack.setText("<");

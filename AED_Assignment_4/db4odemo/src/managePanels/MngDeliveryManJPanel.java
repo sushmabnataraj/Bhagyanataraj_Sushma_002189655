@@ -35,7 +35,7 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
         
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
-        populateTblDMList();
+        displayTableDMList();
     }
 
     /**
@@ -67,38 +67,56 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
         lblDMPhnumber = new javax.swing.JLabel();
         txtfDMPhnumber = new javax.swing.JTextField();
 
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnDMBack.setBackground(new java.awt.Color(102, 102, 102));
         btnDMBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDMBack.setForeground(new java.awt.Color(255, 255, 255));
         btnDMBack.setText("<");
         btnDMBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDMBackActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDMBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 51, 39));
 
         lblMainMR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMainMR.setForeground(new java.awt.Color(102, 102, 102));
         lblMainMR.setText("Manage Delivery Man");
+        jPanel1.add(lblMainMR, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 11, 183, 39));
 
         lblDMName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblDMName.setText("Name:");
+        jPanel1.add(lblDMName, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 68, -1, -1));
 
         lblDMUsername.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblDMUsername.setText("Username:");
+        jPanel1.add(lblDMUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         lblDMPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblDMPassword.setText("Password:");
+        jPanel1.add(lblDMPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel1.add(txtfDMName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 180, 30));
 
         txtfDMUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfDMUsernameActionPerformed(evt);
             }
         });
+        jPanel1.add(txtfDMUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 180, 30));
+        jPanel1.add(txtfDMPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 180, 30));
 
+        btnDMRegister.setBackground(new java.awt.Color(31, 189, 214));
+        btnDMRegister.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDMRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnDMRegister.setText("Register");
         btnDMRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDMRegisterActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDMRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 258, 118, 30));
 
         tblDMList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,152 +132,66 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDMList);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 536, 127));
+
+        btnDMEdit.setBackground(new java.awt.Color(31, 189, 214));
+        btnDMEdit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDMEdit.setForeground(new java.awt.Color(255, 255, 255));
         btnDMEdit.setText("Edit");
         btnDMEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDMEditActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDMEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 465, 65, -1));
 
+        btnDMDelete.setBackground(new java.awt.Color(31, 189, 214));
+        btnDMDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDMDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDMDelete.setText("Delete");
         btnDMDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDMDeleteActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDMDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 465, -1, -1));
 
+        btnDMSave.setBackground(new java.awt.Color(31, 189, 214));
+        btnDMSave.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDMSave.setForeground(new java.awt.Color(255, 255, 255));
         btnDMSave.setText("Save");
         btnDMSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDMSaveActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDMSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 465, 65, -1));
 
         lblDMAddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblDMAddress.setText("Address:");
+        jPanel1.add(lblDMAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 218, -1, -1));
 
         txtfDMAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfDMAddressActionPerformed(evt);
             }
         });
+        jPanel1.add(txtfDMAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 208, 180, 30));
 
         lblDMPhnumber.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblDMPhnumber.setText("PhNumber:");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnDMBack, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblMainMR, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(lblDMName)
-                        .addGap(46, 46, 46)
-                        .addComponent(txtfDMName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(lblDMUsername)
-                        .addGap(22, 22, 22)
-                        .addComponent(txtfDMUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnDMEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(btnDMDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(btnDMSave, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblDMPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(txtfDMPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblDMAddress)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtfDMAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblDMPhnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtfDMPhnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(btnDMRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(132, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDMBack, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMainMR, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lblDMName))
-                    .addComponent(txtfDMName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblDMUsername))
-                    .addComponent(txtfDMUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblDMPassword))
-                    .addComponent(txtfDMPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblDMAddress))
-                    .addComponent(txtfDMAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblDMPhnumber))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtfDMPhnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnDMRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDMEdit)
-                    .addComponent(btnDMDelete)
-                    .addComponent(btnDMSave))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
+        jPanel1.add(lblDMPhnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 268, 62, -1));
+        jPanel1.add(txtfDMPhnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 258, 180, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -279,7 +211,7 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
         if(ecosystem.getUserAccountDirectory().checkIfUsernameIsUnique(txtfDMName.getText())){
             UserAccount userAccount = ecosystem.getUserAccountDirectory().createUserAccount(txtfDMName.getText(), txtfDMUsername.getText(), txtfDMPassword.getText(), null, new DeliverManRole());
             DeliveryMan dm = ecosystem.getDeliveryManDirectory().createUserAccount(txtfDMName.getText(), txtfDMUsername.getText(), txtfDMPassword.getText(),txtfDMAddress.getText(),txtfDMPhnumber.getText());
-            populateTblDMList();
+            displayTableDMList();
             txtfDMName.setText("");
             txtfDMUsername.setText("");
             txtfDMPassword.setText("");
@@ -316,7 +248,7 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
             String username = (String) tblDMList.getValueAt(highlightedRow, 1);
             ecosystem.getDeliveryManDirectory().deleteDeliveryMan(username);
             ecosystem.getUserAccountDirectory().deleteUserAccount(userAcc);
-            populateTblDMList();
+            displayTableDMList();
         }
         else{
             JOptionPane.showMessageDialog(this, "Please select the row to delete");
@@ -331,7 +263,7 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
         txtfDMName.setText("");
         txtfDMUsername.setText("");
         txtfDMPassword.setText("");
-        populateTblDMList();
+        displayTableDMList();
 
     }//GEN-LAST:event_btnDMSaveActionPerformed
 
@@ -362,7 +294,7 @@ public class MngDeliveryManJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtfDMUsername;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTblDMList() {
+    private void displayTableDMList() {
         
         ArrayList<DeliveryMan> dmDirectory = ecosystem.getDeliveryManDirectory().getDeliveryManDirectory();
         DefaultTableModel tableModel = (DefaultTableModel)tblDMList.getModel();

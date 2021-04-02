@@ -59,27 +59,25 @@ public class ManageRestInfoJPanel extends javax.swing.JPanel {
         btnMRIBack = new javax.swing.JButton();
         lblPhnum = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(243, 248, 249));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(243, 248, 249));
 
         lblMRIAddress.setText("Address:");
-        jPanel2.add(lblMRIAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 210, 104, -1));
 
         txtfMRIRestaurantName.setEnabled(false);
-        jPanel2.add(txtfMRIRestaurantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 126, 143, -1));
 
         txtfMRIPhoneNumber.setEnabled(false);
-        jPanel2.add(txtfMRIPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 167, 143, -1));
 
         txtfMRIAddress.setEnabled(false);
-        jPanel2.add(txtfMRIAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 207, 143, -1));
 
         lblRestInfo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblRestInfo.setForeground(new java.awt.Color(102, 102, 102));
         lblRestInfo.setText("Restaurant Info");
-        jPanel2.add(lblRestInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 14, 159, -1));
 
-        btnMRIUpdate.setBackground(new java.awt.Color(0, 0, 0));
+        btnMRIUpdate.setBackground(new java.awt.Color(31, 189, 214));
+        btnMRIUpdate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnMRIUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnMRIUpdate.setText("Update");
         btnMRIUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -87,9 +85,9 @@ public class ManageRestInfoJPanel extends javax.swing.JPanel {
                 btnMRIUpdateActionPerformed(evt);
             }
         });
-        jPanel2.add(btnMRIUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 262, -1, -1));
 
-        btnMRISave.setBackground(new java.awt.Color(0, 0, 0));
+        btnMRISave.setBackground(new java.awt.Color(31, 189, 214));
+        btnMRISave.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnMRISave.setForeground(new java.awt.Color(255, 255, 255));
         btnMRISave.setText("Save");
         btnMRISave.addActionListener(new java.awt.event.ActionListener() {
@@ -97,18 +95,14 @@ public class ManageRestInfoJPanel extends javax.swing.JPanel {
                 btnMRISaveActionPerformed(evt);
             }
         });
-        jPanel2.add(btnMRISave, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 262, 67, -1));
 
         lblMRIUsername.setText("User Name:");
-        jPanel2.add(lblMRIUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 91, 104, -1));
 
         txtfMRIUsername.setEnabled(false);
-        jPanel2.add(txtfMRIUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 88, 143, -1));
 
         lblRestName.setText("Restaurant Name:");
-        jPanel2.add(lblRestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 129, 104, -1));
 
-        btnMRIBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnMRIBack.setBackground(new java.awt.Color(102, 102, 102));
         btnMRIBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnMRIBack.setForeground(new java.awt.Color(255, 255, 255));
         btnMRIBack.setText("<");
@@ -117,29 +111,95 @@ public class ManageRestInfoJPanel extends javax.swing.JPanel {
                 btnMRIBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnMRIBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         lblPhnum.setText("Phone Number:");
-        jPanel2.add(lblPhnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 170, 104, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(btnMRIBack)
+                .addGap(18, 18, 18)
+                .addComponent(lblRestInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(lblMRIUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtfMRIUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(lblRestName, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtfMRIRestaurantName, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(lblPhnum, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtfMRIPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(lblMRIAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtfMRIAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(211, 211, 211)
+                .addComponent(btnMRIUpdate)
+                .addGap(9, 9, 9)
+                .addComponent(btnMRISave, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMRIBack)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblRestInfo)))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblMRIUsername))
+                    .addComponent(txtfMRIUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblRestName))
+                    .addComponent(txtfMRIRestaurantName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblPhnum))
+                    .addComponent(txtfMRIPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblMRIAddress))
+                    .addComponent(txtfMRIAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMRIUpdate)
+                    .addComponent(btnMRISave)))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMRIUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMRIUpdateActionPerformed
