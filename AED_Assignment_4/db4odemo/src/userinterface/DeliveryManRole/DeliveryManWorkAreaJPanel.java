@@ -9,8 +9,6 @@ import Business.EcoSystem;
 import Business.Order.Order;
 
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
-import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -34,8 +32,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
-        this.business = business;
-      
+        this.business = business;      
         
         populateODTable();
     }
@@ -50,7 +47,6 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnODAssign = new javax.swing.JButton();
         btnODProcess = new javax.swing.JButton();
         btnODRefresh = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -59,21 +55,13 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnODAssign.setText("Assign to me");
-        btnODAssign.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnODAssignActionPerformed(evt);
-            }
-        });
-        add(btnODAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 280, 100, -1));
-
         btnODProcess.setText("Process");
         btnODProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnODProcessActionPerformed(evt);
             }
         });
-        add(btnODProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+        add(btnODProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
 
         btnODRefresh.setText("Refresh");
         btnODRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -122,32 +110,16 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         add(lblOrderDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 20));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnODAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnODAssignActionPerformed
-
-        int selectedRow = tblOrderDetails.getSelectedRow();
-        
-        if (selectedRow < 0){
-            return;
-        }
-        
-        WorkRequest request = (WorkRequest)tblOrderDetails.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        populateODTable();
-        
-    }//GEN-LAST:event_btnODAssignActionPerformed
-
     private void btnODProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnODProcessActionPerformed
         
         int selectedRow = tblOrderDetails.getSelectedRow();
         
         if (selectedRow < 0){
             return;
-        }        
+        }
         
-        LabTestWorkRequest request = (LabTestWorkRequest)tblOrderDetails.getValueAt(selectedRow, 0);     
-        request.setStatus("Processing");        
-        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
+        Order order = (Order)tblOrderDetails.getValueAt(selectedRow, 0); 
+        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, order);
         userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -159,7 +131,6 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnODRefreshActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnODAssign;
     private javax.swing.JButton btnODProcess;
     private javax.swing.JButton btnODRefresh;
     private javax.swing.JScrollPane jScrollPane1;

@@ -25,7 +25,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public ProcessWorkRequestJPanel(JPanel userProcessContainer, LabTestWorkRequest request) {
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, Order order) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.order = order;

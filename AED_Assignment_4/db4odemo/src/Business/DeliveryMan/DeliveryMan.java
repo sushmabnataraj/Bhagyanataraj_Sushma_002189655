@@ -38,6 +38,7 @@ public class DeliveryMan {
     public void setName(String name) {
         this.name = name;
     }
+    
 
     public ArrayList<Order> getOrderList() {
         return orderList;
@@ -77,6 +78,11 @@ public class DeliveryMan {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+    
+    @Override
+    public String toString() {
+        return userName;
     }
     
      public void addOrder(String restaurantName, String customerName, String deliverMan, ArrayList<Dishlist> Order, String orderAmount, String address) {

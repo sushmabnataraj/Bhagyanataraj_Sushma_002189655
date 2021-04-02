@@ -22,6 +22,7 @@ public class Dishlist {
         this.orderAmount = price;
     }
     
+    @Override
     public String toString() {
         return name;
     }
